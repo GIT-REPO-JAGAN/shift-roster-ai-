@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shift Roster Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Shift Roster Generator</h2>
+
+<form action="/generate/" method="post" enctype="multipart/form-data">
+
+    <label>Upload Excel File:</label>
+    <input type="file" name="file" required>
+
+    <label>Total shifts per day:</label>
+    <input type="number" name="total_shifts" required>
+
+    <label>Minimum headcount per shift:</label>
+    <input type="number" name="min_headcount" required>
+
+    <label>Seniority classification:</label>
+    <input type="text" name="seniority" placeholder="Example: Junior, Mid, Senior">
+
+    <label>Backup rule:</label>
+    <input type="text" name="backup_rule" placeholder="Example: Backup from same team">
+
+    <label>Rotation frequency:</label>
+    <input type="text" name="rotation" placeholder="Example: Weekly rotation">
+
+    <label>Constraints:</label>
+    <input type="text" name="constraints" placeholder="Example: No night shifts for juniors">
+
+    <label>Additional rules:</label>
+    <input type="text" name="extra_rules" placeholder="Any extra conditions">
+
+    <button type="submit">Generate Roster</button>
+
+</form>
+
+</body>
+</html>
