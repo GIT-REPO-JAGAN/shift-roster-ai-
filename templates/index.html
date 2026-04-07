@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shift Roster Generator</title>
+</head>
+<body>
+
+<h2>Upload Excel + Define Rules</h2>
+
+<form action="/generate/" method="post" enctype="multipart/form-data">
+
+    <input type="file" name="file" required><br><br>
+
+    <label>Total shifts per day:</label>
+    <input type="number" name="total_shifts" required><br><br>
+
+    <label>Minimum headcount per shift:</label>
+    <input type="number" name="min_headcount" required><br><br>
+
+    <label>Seniority classification:</label>
+    <input type="text" name="seniority"><br><br>
+
+    <label>Backup rule:</label>
+    <input type="text" name="backup_rule"><br><br>
+
+    <label>Rotation frequency:</label>
+    <input type="text" name="rotation"><br><br>
+
+    <label>Constraints:</label>
+    <input type="text" name="constraints"><br><br>
+
+    <label>Additional rules:</label>
+    <input type="text" name="extra_rules"><br><br>
+
+    <button type="submit">Generate Roster</button>
+
+</form>
+
+</body>
+</html>
